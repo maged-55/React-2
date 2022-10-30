@@ -55,6 +55,7 @@ let coll ;
                 {props.Name}
               </Heading>
               <Text dir="rtl" align={'right'} color={'gray.500'}>
+              {/* noOfLines={'4'} */}
                 <br/>
                 <br/>
                 {props.Description}</Text>
