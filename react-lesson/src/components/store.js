@@ -13,6 +13,10 @@ import {
     
      Img,
   } from '@chakra-ui/react';
+  import React,{useState} from 'react'
+  import { ButtonGroup,Input } from '@chakra-ui/react'
+
+
 
 
   export default function SocialProfileWithImage(props) {
@@ -27,7 +31,50 @@ let coll ;
       vall = "التسجيل مغلق";
       coll = '#a0a2a5';
     }
+
+    const [searching, setSearch] = useState('');
+
+
+    let x =  [props.Name]
+      let arr = x.filter((e)=>e)
+      console.log(x);
+
+      function handle(e){
+        if(arr.includes(e.target.value)){
+          setSearch(true)
+       }else{
+        setSearch(false)
+       }
+      }
+
+    
+      // <Search Logg = "jjjjjjjj"/>
+
+
+
+//     const [list, setList] = useState([props.Name])
+//  const listt = props.Name ;
+//     const sum = () =>{
+//       setList(list)
+//   }
+
+ 
+
+  //   const Nnames = () =>{
+  //     setList()
+  // }
+  
+
     return (
+
+
+ 
+      
+
+
+
+
+
       <Center py={6}>
         <Box
           maxW={'270px'}
