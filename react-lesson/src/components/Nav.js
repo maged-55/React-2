@@ -1,13 +1,10 @@
 
-
-
 import { ReactNode } from 'react';
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -20,11 +17,18 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import {Link} from "react-router-dom";
+import React, { Component } from 'react'
 
-const Links = ['Bootcamps', 'Projects', 'Team'];
+
+
+
+
+const Links = ['Log in', 'Projects', 'Team'];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
+  <Link 
+  
     px={2}
     py={1}
     rounded={'md'}

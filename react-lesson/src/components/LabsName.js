@@ -5,7 +5,7 @@ export const Labsname =[
     },
     {
         "id": 2,
-        "lab ": "تطوير تطبيقات iOS باستخدام SwiftUI",
+        "lab": "تطوير تطبيقات iOS باستخدام SwiftUI",
     },
     {
         "id":3,
