@@ -25,7 +25,7 @@ function App() {
     <div className="App">
 
 <Nav/>
-
+{/* <HomeW/> */}
 <Route1/>
 
  <Footer/>

@@ -5,6 +5,7 @@ import Footer from './Footer';
 import LoginView from './LoginView';
 import Majed from './Majed'
 import Store from './store1'
+import Get from './Get'
 
 
 
@@ -16,6 +17,9 @@ function Route1() {
 
  <Route exact path="/" element={<LoginView/>} />
  <Route path="Store" element={<Store/>} />
+ <Route path="Get" element={<Get/>} />
+
+
 
 </Routes>
    </div>

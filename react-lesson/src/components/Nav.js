@@ -19,12 +19,16 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {Link} from "react-router-dom";
 import React, { Component } from 'react'
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 
 
 
 const Links = ['Log in', 'Projects', 'Team'];
+
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link 
@@ -42,6 +46,8 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 );
 
 export default function Simple() {
+  const navigate = useNavigate()
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

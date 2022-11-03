@@ -14,17 +14,34 @@ import {
 import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import React,{useState,useEffect} from 'react'
+import axios from "axios";
+
 
 export default function LoginView() {
+  let url = "https://636242497521369cd068dfd3.mockapi.io/ToDo"
+  // const [names,setNames]=useState({email:"",password:""})
+
+
+  const [Email, setEmail] = useState()
+  const [Password, setPassword] = useState()
+
+  const postData = () => {
+    axios.post(url,{
+        Email,
+        Password
+    }).then(res =>{
+        console.log(res)
+    })
+   }
 
   const navigate = useNavigate()
 
-  const [names,setNames]=useState({email:"",password:""})
   const LogIn =()=>{
-    if(names.email.length=="" || names.password.length==""){
+    if(Email.length<1 || Password.length<1){
         alert("Email and Password are required");
     }else{
-      navigate('Store')
+     postData();
+      navigate('Get');
     }}
 
   return (
@@ -48,11 +65,13 @@ export default function LoginView() {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input value={names.email} onChange={e=>{setNames({ ...names,email:e.target.value})}} type="email" />
+              {/* <Input value={names.email} onChange={e=>{setNames({ ...names,email:e.target.value})}} type="email" /> */}
+             <Input onChange ={e =>{ setEmail(e.target.value)}} type="email" />
+
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input value={names.password} onChange={e=>{setNames({ ...names,password:e.target.value})}} type="password" />
+              <Input onChange ={e =>{ setPassword(e.target.value)}} type="password" />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -63,7 +82,6 @@ export default function LoginView() {
                 <Link color={'blue.400'}>Forgot password?</Link>
               </Stack>
               <Button onClick={() => LogIn()}
-
                 bg={'blue.400'}
                 color={'white'}
                 _hover={{
