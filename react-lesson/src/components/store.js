@@ -13,15 +13,18 @@ import {
     
      Img,
   } from '@chakra-ui/react';
+  import {Link} from "react-router-dom";
+
   import React,{useState} from 'react'
   import { ButtonGroup,Input } from '@chakra-ui/react'
   import Store from './store';
+  import Gett from './Gett'
+
 
 
 
 
   export default function SocialProfileWithImage(props) {
-
 
    
 let vall ;
@@ -71,10 +74,9 @@ let coll ;
     return (
 
 
+
  
       
-
-
 
 
 
@@ -110,7 +112,7 @@ let coll ;
                 <br/>
                 status : {props.Description}</Text>
             </Stack>
-            <Button
+            <Link to= {`/Get/${props.id}`}><Button
               w={'full'}
               mt={-3}
               bg={useColorModeValue(coll, 'gray.900')}
@@ -121,7 +123,7 @@ let coll ;
                 boxShadow: 'lg',
               }}>
                 {vall}
-            </Button>
+            </Button></Link>
           </Box>
         </Box>
       </Center>

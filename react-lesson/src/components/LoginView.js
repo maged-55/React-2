@@ -22,8 +22,8 @@ export default function LoginView() {
   // const [names,setNames]=useState({email:"",password:""})
 
 
-  const [Email, setEmail] = useState()
-  const [Password, setPassword] = useState()
+  const [Email, setEmail] = useState("")
+  const [Password, setPassword] = useState("")
 
   const postData = () => {
     axios.post(url,{
